@@ -1,5 +1,5 @@
-import 'dart:ffi';
-
+import 'package:crypto_trading_app_ui_kit_flutter/screens/deposit_screen.dart';
+import 'package:crypto_trading_app_ui_kit_flutter/screens/withdraw_screen.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -148,27 +148,40 @@ class PortfolioScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Expanded(
-                  child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
-                    decoration: BoxDecoration(
-                      color: Color(0xFF0063F5),
-                      borderRadius: BorderRadius.circular(5),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withOpacity(0.1),
-                          offset: Offset(0, 8), // ⬇️ shadow only on bottom
-                          blurRadius: 6,
-                          spreadRadius: 0,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => DipositScreen(),
                         ),
-                      ],
-                    ),
-                    child: Center(
-                      child: Text(
-                        'Deposit INR',
-                        style: GoogleFonts.manrope(
-                          color: Color(0xFFF8F9FA),
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
+                      );
+                    },
+                    child: Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 20,
+                        vertical: 16,
+                      ),
+                      decoration: BoxDecoration(
+                        color: Color(0xFF0063F5),
+                        borderRadius: BorderRadius.circular(5),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.1),
+                            offset: Offset(0, 8), // ⬇️ shadow only on bottom
+                            blurRadius: 6,
+                            spreadRadius: 0,
+                          ),
+                        ],
+                      ),
+                      child: Center(
+                        child: Text(
+                          'Deposit INR',
+                          style: GoogleFonts.manrope(
+                            color: Color(0xFFF8F9FA),
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
                     ),
@@ -176,31 +189,44 @@ class PortfolioScreen extends StatelessWidget {
                 ),
                 SizedBox(width: 16),
                 Expanded(
-                  child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
-                    decoration: BoxDecoration(
-                      color: Color(0xFFF8F9FA),
-                      borderRadius: BorderRadius.circular(5),
-                      border: Border.all(
-                        width: 1, //
-                        color: Color(0xFF0063F5),
-                      ),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withOpacity(0.1),
-                          offset: Offset(0, 8), // ⬇️ shadow only on bottom
-                          blurRadius: 6,
-                          spreadRadius: 0,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => WithdrawScreen(),
                         ),
-                      ],
-                    ),
-                    child: Center(
-                      child: Text(
-                        'Withdraw INR',
-                        style: GoogleFonts.manrope(
+                      );
+                    },
+                    child: Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 20,
+                        vertical: 16,
+                      ),
+                      decoration: BoxDecoration(
+                        color: Color(0xFFF8F9FA),
+                        borderRadius: BorderRadius.circular(5),
+                        border: Border.all(
+                          width: 1, //
                           color: Color(0xFF0063F5),
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.1),
+                            offset: Offset(0, 8), // ⬇️ shadow only on bottom
+                            blurRadius: 6,
+                            spreadRadius: 0,
+                          ),
+                        ],
+                      ),
+                      child: Center(
+                        child: Text(
+                          'Withdraw INR',
+                          style: GoogleFonts.manrope(
+                            color: Color(0xFF0063F5),
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
                     ),

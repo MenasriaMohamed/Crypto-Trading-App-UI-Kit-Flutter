@@ -1,4 +1,3 @@
-import 'package:crypto_trading_app_ui_kit_flutter/screens/home_screen.dart';
 import 'package:crypto_trading_app_ui_kit_flutter/screens/main_home_screen.dart';
 import 'package:flutter/material.dart';
 

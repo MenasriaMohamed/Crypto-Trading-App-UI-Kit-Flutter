@@ -1,5 +1,4 @@
-import 'dart:ffi';
-
+import 'package:crypto_trading_app_ui_kit_flutter/screens/coin_screen.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -140,123 +139,131 @@ class HomeScreen extends StatelessWidget {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  Container(
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withOpacity(0.1),
-                          offset: Offset(0, 3), // ⬇️ shadow only on bottom
-                          blurRadius: 6,
-                          spreadRadius: 0,
-                        ),
-                      ],
-                    ),
-                    child: Padding(
-                      padding: EdgeInsetsGeometry.symmetric(
-                        horizontal: 10,
-                        vertical: 20,
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-
-                        children: [
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Image.asset(
-                                'assets/images/cryptocurrency_bitcoin_logo.png',
-                                fit: BoxFit.cover,
-                              ),
-                              SizedBox(width: 10),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    'Bitcoin',
-                                    style: GoogleFonts.manrope(
-                                      color: Colors.black,
-                                      fontSize: 17,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                  Text(
-                                    'BTC',
-                                    style: GoogleFonts.manrope(
-                                      color: Color(0xFF6C757D),
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              SizedBox(
-                                width: 60,
-                                height: 30,
-                                child: LineChart(
-                                  LineChartData(
-                                    gridData: FlGridData(show: false),
-                                    titlesData: FlTitlesData(show: false),
-                                    borderData: FlBorderData(show: false),
-                                    lineBarsData: [
-                                      LineChartBarData(
-                                        isCurved: true,
-                                        color: Color(0xFF21BF73),
-                                        barWidth: 2,
-                                        spots: [
-                                          FlSpot(0, 1),
-                                          FlSpot(1, 1.3),
-                                          FlSpot(2, 1.2),
-                                          FlSpot(3, 2.8),
-                                          FlSpot(4, 1.6),
-                                          FlSpot(5, 2),
-                                          FlSpot(6, 2.2),
-                                        ],
-                                        isStrokeCapRound: true,
-                                        dotData: FlDotData(show: false),
-                                      ),
-                                    ],
-                                    minX: 0,
-                                    maxX: 6,
-                                    minY: 1,
-                                    maxY: 2.5,
-                                  ),
-                                ),
-                              ),
-                              SizedBox(width: 30),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.end,
-                                children: [
-                                  Text(
-                                    '₹2,509.75',
-                                    style: GoogleFonts.manrope(
-                                      color: Colors.black,
-                                      fontSize: 17,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                  Text(
-                                    '+9.77%',
-                                    style: GoogleFonts.manrope(
-                                      color: Color(0xFF21BF73),
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ],
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => CoinScreen()),
+                      );
+                    },
+                    child: Container(
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.1),
+                            offset: Offset(0, 3), // ⬇️ shadow only on bottom
+                            blurRadius: 6,
+                            spreadRadius: 0,
                           ),
                         ],
+                      ),
+                      child: Padding(
+                        padding: EdgeInsetsGeometry.symmetric(
+                          horizontal: 10,
+                          vertical: 20,
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+
+                          children: [
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Image.asset(
+                                  'assets/images/cryptocurrency_bitcoin_logo.png',
+                                  fit: BoxFit.cover,
+                                ),
+                                SizedBox(width: 10),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'Bitcoin',
+                                      style: GoogleFonts.manrope(
+                                        color: Colors.black,
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    Text(
+                                      'BTC',
+                                      style: GoogleFonts.manrope(
+                                        color: Color(0xFF6C757D),
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                SizedBox(
+                                  width: 60,
+                                  height: 30,
+                                  child: LineChart(
+                                    LineChartData(
+                                      gridData: FlGridData(show: false),
+                                      titlesData: FlTitlesData(show: false),
+                                      borderData: FlBorderData(show: false),
+                                      lineBarsData: [
+                                        LineChartBarData(
+                                          isCurved: true,
+                                          color: Color(0xFF21BF73),
+                                          barWidth: 2,
+                                          spots: [
+                                            FlSpot(0, 1),
+                                            FlSpot(1, 1.3),
+                                            FlSpot(2, 1.2),
+                                            FlSpot(3, 2.8),
+                                            FlSpot(4, 1.6),
+                                            FlSpot(5, 2),
+                                            FlSpot(6, 2.2),
+                                          ],
+                                          isStrokeCapRound: true,
+                                          dotData: FlDotData(show: false),
+                                        ),
+                                      ],
+                                      minX: 0,
+                                      maxX: 6,
+                                      minY: 1,
+                                      maxY: 2.5,
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(width: 30),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                  children: [
+                                    Text(
+                                      '₹2,509.75',
+                                      style: GoogleFonts.manrope(
+                                        color: Colors.black,
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    Text(
+                                      '+9.77%',
+                                      style: GoogleFonts.manrope(
+                                        color: Color(0xFF21BF73),
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),

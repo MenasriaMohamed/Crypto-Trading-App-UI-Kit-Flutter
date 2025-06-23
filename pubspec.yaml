@@ -63,7 +63,12 @@ flutter:
   assets:
     - assets/images/
     - assets/images/bottom_navigation_icons/
+<<<<<<< Updated upstream
     - assets/images/profile_icons/
+=======
+    - assets/icons/
+
+>>>>>>> Stashed changes
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
 

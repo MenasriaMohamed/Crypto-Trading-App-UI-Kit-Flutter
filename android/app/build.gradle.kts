@@ -8,7 +8,11 @@ plugins {
 android {
     namespace = "com.example.crypto_trading_app_ui_kit_flutter"
     compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
+    ndkVersion = if (project.hasProperty("customNdkVersion")) {
+        project.property("customNdkVersion").toString()
+    } else {
+        flutter.ndkVersion
+    }
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11

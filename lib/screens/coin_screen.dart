@@ -71,31 +71,37 @@ class CoinScreen extends StatelessWidget {
                     ],
                   ),
 
-                  Container(
-                    padding: EdgeInsets.symmetric(vertical: 10, horizontal: 13),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16),
-                      color: Color(0xFFECF4FF),
-                    ),
-                    child: Center(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Image.asset(
-                            'assets/images/exchange.png',
-                            fit: BoxFit.cover,
-                          ),
-                          SizedBox(width: 8),
-                          Text(
-                            'Exchange',
-                            style: GoogleFonts.manrope(
-                              color: Color(0xFF0063F5),
-                              fontSize: 11,
-                              fontWeight: FontWeight.w600,
+                  GestureDetector(
+                    onTap: () {},
+                    child: Container(
+                      padding: EdgeInsets.symmetric(
+                        vertical: 10,
+                        horizontal: 13,
+                      ),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(16),
+                        color: Color(0xFFECF4FF),
+                      ),
+                      child: Center(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Image.asset(
+                              'assets/images/exchange.png',
+                              fit: BoxFit.cover,
                             ),
-                          ),
-                        ],
+                            SizedBox(width: 8),
+                            Text(
+                              'Exchange',
+                              style: GoogleFonts.manrope(
+                                color: Color(0xFF0063F5),
+                                fontSize: 11,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),

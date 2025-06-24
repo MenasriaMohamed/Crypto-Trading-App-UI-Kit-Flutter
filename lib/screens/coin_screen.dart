@@ -1,3 +1,6 @@
+import 'package:crypto_trading_app_ui_kit_flutter/screens/buy_screen.dart';
+import 'package:crypto_trading_app_ui_kit_flutter/screens/history_screen.dart';
+import 'package:crypto_trading_app_ui_kit_flutter/screens/sell_screen.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -98,6 +101,7 @@ class CoinScreen extends StatelessWidget {
                   ),
                 ],
               ),
+
               SizedBox(height: 12),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
@@ -499,44 +503,52 @@ class CoinScreen extends StatelessWidget {
 
               SizedBox(height: 10),
 
-              Container(
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.1),
-                      offset: Offset(0, 3), // ⬇️ shadow only on bottom
-                      blurRadius: 6,
-                      spreadRadius: 0,
-                    ),
-                  ],
-                ),
-                child: Padding(
-                  padding: EdgeInsetsGeometry.symmetric(
-                    horizontal: 16,
-                    vertical: 16,
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-
-                    children: [
-                      Text(
-                        'Transactions',
-                        style: GoogleFonts.manrope(
-                          color: Colors.black,
-                          fontSize: 13,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-
-                      Image.asset(
-                        'assets/images/profile_icons/more.png',
-                        fit: BoxFit.cover,
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => HistoryScreen()),
+                  );
+                },
+                child: Container(
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.1),
+                        offset: Offset(0, 3), // ⬇️ shadow only on bottom
+                        blurRadius: 6,
+                        spreadRadius: 0,
                       ),
                     ],
+                  ),
+                  child: Padding(
+                    padding: EdgeInsetsGeometry.symmetric(
+                      horizontal: 16,
+                      vertical: 16,
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+
+                      children: [
+                        Text(
+                          'Transactions',
+                          style: GoogleFonts.manrope(
+                            color: Colors.black,
+                            fontSize: 13,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+
+                        Image.asset(
+                          'assets/images/profile_icons/more.png',
+                          fit: BoxFit.cover,
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -550,7 +562,14 @@ class CoinScreen extends StatelessWidget {
                   children: [
                     Expanded(
                       child: GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => BuyScreen(),
+                            ),
+                          );
+                        },
                         child: Container(
                           padding: EdgeInsets.symmetric(
                             horizontal: 20,
@@ -587,7 +606,14 @@ class CoinScreen extends StatelessWidget {
                     SizedBox(width: 10),
                     Expanded(
                       child: GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => SellScreen(),
+                            ),
+                          );
+                        },
                         child: Container(
                           padding: EdgeInsets.symmetric(
                             horizontal: 20,

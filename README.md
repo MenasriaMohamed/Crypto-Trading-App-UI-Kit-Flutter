@@ -1,16 +1,52 @@
-# crypto_trading_app_ui_kit_flutter
+# 🚀 My Flutter App
 
-A new Flutter project.
+A beautiful, responsive, and modern Flutter application built with ❤️.
 
-## Getting Started
+## 📱 Screenshots
 
-This project is a starting point for a Flutter application.
+| Home Screen                   | Detail Screen                     |
+| ----------------------------- | --------------------------------- |
+| ![Home](screenshots/home.png) | ![Detail](screenshots/detail.png) |
 
-A few resources to get you started if this is your first Flutter project:
+> _(Add your own screenshots in a `/screenshots` folder and update the paths)_
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## ✨ Features
+
+- 🧭 Navigation with `Navigator` / `GetX` / etc.
+- 📡 REST API integration with `Dio`
+- 💬 Localized UI (multi-language support)
+- 🔥 Custom UI components
+- 🌙 Light & Dark mode support
+- 📈 Live chart with `fl_chart`
+
+---
+
+## 🛠️ Tech Stack
+
+| Tech     | Description                              |
+| -------- | ---------------------------------------- |
+| Flutter  | Cross-platform mobile framework          |
+| Dart     | Programming language                     |
+| Dio      | HTTP client                              |
+| GetX     | State management & navigation (optional) |
+| fl_chart | Charting library                         |
+
+---
+
+## 🧪 Installation
+
+### Prerequisites
+
+- Flutter SDK: [Install Flutter](https://docs.flutter.dev/get-started/install)
+- A code editor (e.g. VSCode or Android Studio)
+
+### Setup
+
+```bash
+git clone https://github.com/your-username/your-repo.git
+cd your-repo
+flutter pub get
+flutter run
+```

@@ -4,11 +4,11 @@ A clean and modern UI kit for a crypto trading mobile app built using **Flutter*
 
 ---
 
-## 📱 Screenshots
+## 🎥 App Preview
 
-| Screens                              |
-| ------------------------------------ |
-| ![Screens](screenshots/animated.gif) |
+![App Preview](screenshots/animated.gif)
+
+## 📱 Screenshots
 
 | Home Screen                    | Coin Detail                         |
 | ------------------------------ | ----------------------------------- |

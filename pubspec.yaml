@@ -38,9 +38,12 @@ dependencies:
   google_fonts: ^6.2.1
   flash: ^3.1.1
   fl_chart: ^1.0.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: ^0.14.4
+  flutter_native_splash: ^2.4.6
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -62,6 +65,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
+    - assets/icons/
     - assets/images/bottom_navigation_icons/
     - assets/images/profile_icons/
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -2,7 +2,7 @@
     <application
         android:label="crypto_trading_app_ui_kit_flutter"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/launcher_icon">
         <activity
             android:name=".MainActivity"
             android:exported="true"

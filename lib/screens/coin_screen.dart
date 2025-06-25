@@ -71,31 +71,209 @@ class CoinScreen extends StatelessWidget {
                     ],
                   ),
 
-                  Container(
-                    padding: EdgeInsets.symmetric(vertical: 10, horizontal: 13),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16),
-                      color: Color(0xFFECF4FF),
-                    ),
-                    child: Center(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Image.asset(
-                            'assets/images/exchange.png',
-                            fit: BoxFit.cover,
+                  GestureDetector(
+                    onTap: () {
+                      showModalBottomSheet(
+                        context: context,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.vertical(
+                            top: Radius.circular(20),
                           ),
-                          SizedBox(width: 8),
-                          Text(
-                            'Exchange',
-                            style: GoogleFonts.manrope(
-                              color: Color(0xFF0063F5),
-                              fontSize: 11,
-                              fontWeight: FontWeight.w600,
+                        ),
+                        isScrollControlled: true,
+                        builder: (context) {
+                          return Container(
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.vertical(
+                                top: Radius.circular(20),
+                              ),
                             ),
-                          ),
-                        ],
+
+                            child: Padding(
+                              padding: const EdgeInsets.all(20.0),
+                              child: Wrap(
+                                children: [
+                                  SizedBox(
+                                    width: double.infinity,
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        Row(
+                                          children: [
+                                            Text(
+                                              'Exchange',
+                                              style: GoogleFonts.manrope(
+                                                color: Color(0xFF212529),
+                                                fontSize: 18,
+                                                fontWeight: FontWeight.w800,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        SizedBox(height: 10),
+
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Image.asset(
+                                              'assets/images/receive_crypto.png',
+                                              fit: BoxFit.cover,
+                                            ),
+                                            SizedBox(width: 10),
+                                            Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.start,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+
+                                              children: [
+                                                Text(
+                                                  'Send Crypto',
+                                                  style: GoogleFonts.manrope(
+                                                    color: Color(0xFF212529),
+                                                    fontSize: 13,
+                                                    fontWeight: FontWeight.w700,
+                                                  ),
+                                                ),
+                                                Text(
+                                                  'Send Crypto from your wallet to another wallet ',
+                                                  style: GoogleFonts.manrope(
+                                                    color: Color(0xFF6C757D),
+                                                    fontSize: 10,
+                                                    fontWeight: FontWeight.w300,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                        SizedBox(height: 16),
+                                        Container(
+                                          width: double.infinity,
+                                          height: 1,
+                                          color: Color(0xFFDFE2E4),
+                                        ),
+                                        SizedBox(height: 16),
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Image.asset(
+                                              'assets/images/send_crypto.png',
+                                              fit: BoxFit.cover,
+                                            ),
+                                            SizedBox(width: 10),
+                                            Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.start,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  'Receive Crypto',
+                                                  style: GoogleFonts.manrope(
+                                                    color: Color(0xFF212529),
+                                                    fontSize: 13,
+                                                    fontWeight: FontWeight.w700,
+                                                  ),
+                                                ),
+                                                Text(
+                                                  'Send Crypto from your wallet to another wallet ',
+                                                  style: GoogleFonts.manrope(
+                                                    color: Color(0xFF6C757D),
+                                                    fontSize: 10,
+                                                    fontWeight: FontWeight.w300,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                        SizedBox(height: 20),
+                                        GestureDetector(
+                                          onTap: () {},
+                                          child: Container(
+                                            padding: EdgeInsets.symmetric(
+                                              horizontal: 20,
+                                              vertical: 10,
+                                            ),
+                                            decoration: BoxDecoration(
+                                              color: Color(0xFF0063F5),
+                                              borderRadius:
+                                                  BorderRadius.circular(5),
+                                              boxShadow: [
+                                                BoxShadow(
+                                                  color: Colors.black
+                                                      .withOpacity(0.1),
+                                                  offset: Offset(
+                                                    0,
+                                                    8,
+                                                  ), // ⬇️ shadow only on bottom
+                                                  blurRadius: 6,
+                                                  spreadRadius: 0,
+                                                ),
+                                              ],
+                                            ),
+                                            child: Center(
+                                              child: Text(
+                                                'Update Market',
+                                                style: GoogleFonts.manrope(
+                                                  color: Color(0xFFF8F9FA),
+                                                  fontSize: 15,
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          );
+                        },
+                      );
+                    },
+                    child: Container(
+                      padding: EdgeInsets.symmetric(
+                        vertical: 10,
+                        horizontal: 13,
+                      ),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(16),
+                        color: Color(0xFFECF4FF),
+                      ),
+                      child: Center(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Image.asset(
+                              'assets/images/exchange.png',
+                              fit: BoxFit.cover,
+                            ),
+                            SizedBox(width: 8),
+                            Text(
+                              'Exchange',
+                              style: GoogleFonts.manrope(
+                                color: Color(0xFF0063F5),
+                                fontSize: 11,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),

@@ -2,6 +2,7 @@ import 'package:crypto_trading_app_ui_kit_flutter/screens/home_screen.dart';
 import 'package:crypto_trading_app_ui_kit_flutter/screens/market_screen.dart';
 import 'package:crypto_trading_app_ui_kit_flutter/screens/portfolio_screen.dart';
 import 'package:crypto_trading_app_ui_kit_flutter/screens/profile_screen.dart';
+import 'package:crypto_trading_app_ui_kit_flutter/screens/rewards_screen.dart';
 import 'package:flutter/material.dart';
 
 class MainHomeScreen extends StatefulWidget {
@@ -15,8 +16,8 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
   final List<Widget> widgetOptions = const [
     HomeScreen(),
     PortfolioScreen(),
-    HomeScreen(),
-    HomeScreen(),
+    RewardsScreen(),
+    MarketScreen(),
     ProfileScreen(),
   ];
 

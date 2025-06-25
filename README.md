@@ -32,6 +32,31 @@ A clean and modern UI kit for a crypto trading mobile app built using **Flutter*
 
 ---
 
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Flutter SDK (3.0.0 or higher)
+- Dart SDK
+- Android Studio / VS Code
+- Android/iOS device or emulator
+
+---
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/MenasriaMohamed/Crypto-Trading-App-UI-Kit-Flutter.git
+   cd Crypto-Trading-App-UI-Kit-Flutter
+   ```
+1. **Install dependencies**
+   ```
+   bashflutter pub get
+   ```
+
+---
+
 ## 📦 Dependencies
 
 ```yaml

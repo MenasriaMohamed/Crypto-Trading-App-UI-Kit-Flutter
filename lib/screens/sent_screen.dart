@@ -186,6 +186,7 @@ class SentScreen extends StatelessWidget {
                           ),
                         ),
                       ),
+
                       SizedBox(height: 16),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,

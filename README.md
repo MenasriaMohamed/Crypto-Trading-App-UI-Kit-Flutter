@@ -53,3 +53,21 @@ dependencies:
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
+
+📧 Contact
+Mohamed MENASRIA - @MenasriaMohamed - menasria1996mohamed@gmail.com
+Project Link: https://github.com/MenasriaMohamed/Crypto-Trading-App-UI-Kit-Flutter
+
+## ⭐ Show Your Support
+
+If this project helped you, please give it a ⭐ on GitHub!
+
+## 🔮 Roadmap
+
+- [ ] Add more chart types and indicators
+- [ ] Implement push notifications
+- [ ] Add cryptocurrency news feed
+- [ ] Create admin panel interface
+- [ ] Add multi-language support
+- [ ] Implement biometric authentication
+- [ ] Add trading alerts and notifications

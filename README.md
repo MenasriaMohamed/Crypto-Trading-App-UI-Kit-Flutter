@@ -56,8 +56,8 @@ dependencies:
 
 ## 📧 Contact
 
-Mohamed MENASRIA - @MenasriaMohamed - menasria1996mohamed@gmail.com
-Project Link: https://github.com/MenasriaMohamed/Crypto-Trading-App-UI-Kit-Flutter
+- Mohamed MENASRIA - @MenasriaMohamed - menasria1996mohamed@gmail.com
+- Project Link: https://github.com/MenasriaMohamed/Crypto-Trading-App-UI-Kit-Flutter
 
 ## ⭐ Show Your Support
 

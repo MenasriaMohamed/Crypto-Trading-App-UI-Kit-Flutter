@@ -38,12 +38,13 @@ dependencies:
   google_fonts: ^6.2.1
   flash: ^3.1.1
   fl_chart: ^1.0.0
+  rename_app: ^1.6.3
+  splash_master: ^0.0.3
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_launcher_icons: ^0.14.4
-  flutter_native_splash: ^2.4.6
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -54,7 +55,20 @@ dev_dependencies:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
-
+splash_master:
+  color: "#FFFFFF"
+  # Use to specifies the splash image
+  image: "assets/logo.png"
+  ios_content_mode: "center"
+  android_gravity: "center"
+  android_background_image_gravity: "fill"
+  android_12_and_above:
+    # Provides the background color of splash screen
+    color: "#FFFFFF"
+    # Provides custom icon to replace the default app icon
+    image: "assets/logo.png"
+    # Provides branding image which is shown under main icon image.
+    branding_image: "assets/logo.png"
 # The following section is specific to Flutter packages.
 flutter:
   # The following line ensures that the Material Icons font is

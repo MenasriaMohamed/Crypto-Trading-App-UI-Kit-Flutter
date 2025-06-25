@@ -6,7 +6,9 @@ A clean and modern UI kit for a crypto trading mobile app built using **Flutter*
 
 ## 📱 Screenshots
 
-_Add screenshots from your app to show off the UI:_
+| Screens                              |
+| ------------------------------------ |
+| ![Screens](screenshots/animated.gif) |
 
 | Home Screen                    | Coin Detail                         |
 | ------------------------------ | ----------------------------------- |

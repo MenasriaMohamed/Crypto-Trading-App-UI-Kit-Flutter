@@ -8,9 +8,9 @@ A clean and modern UI kit for a crypto trading mobile app built using **Flutter*
 
 _Add screenshots from your app to show off the UI:_
 
-| Home Screen                   | Coin Detail                       |
-| ----------------------------- | --------------------------------- |
-| ![Home](screenshots/home.png) | ![Detail](screenshots/detail.png) |
+| Home Screen                    | Coin Detail                         |
+| ------------------------------ | ----------------------------------- |
+| ![Home](screenshots/home.jpeg) | ![Detail](screenshots/details.jpeg) |
 
 ---
 
@@ -18,7 +18,6 @@ _Add screenshots from your app to show off the UI:_
 
 - ⚡ Clean and responsive UI
 - 📊 Real-time-like charts using [`fl_chart`](https://pub.dev/packages/fl_chart)
-- 🌙 Light & Dark mode ready (customizable)
 - 🧩 Organized components and screens
 - 🚀 Splash screen configuration
 - 📱 Ready to integrate with live APIs (e.g., CoinGecko, Binance, etc.)

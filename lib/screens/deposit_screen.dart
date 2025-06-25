@@ -24,9 +24,12 @@ class DipositScreen extends StatelessWidget {
                       Navigator.pop(context);
                     },
 
-                    child: Image.asset(
-                      'assets/images/back.png',
-                      fit: BoxFit.cover,
+                    child: Container(
+                      padding: EdgeInsets.only(left: 10, right: 20),
+                      child: Image.asset(
+                        'assets/images/back.png',
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                   SizedBox(width: 20),

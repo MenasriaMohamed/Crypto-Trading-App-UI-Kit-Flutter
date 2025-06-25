@@ -1,3 +1,4 @@
+import 'package:crypto_trading_app_ui_kit_flutter/models/cryptocurrency.dart';
 import 'package:crypto_trading_app_ui_kit_flutter/screens/buy_screen.dart';
 import 'package:crypto_trading_app_ui_kit_flutter/screens/history_screen.dart';
 import 'package:crypto_trading_app_ui_kit_flutter/screens/sell_screen.dart';
@@ -6,7 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CoinScreen extends StatelessWidget {
-  const CoinScreen({super.key});
+  final Cryptocurrency coin;
+  const CoinScreen({super.key, required this.coin});
 
   @override
   Widget build(BuildContext context) {
@@ -32,35 +34,39 @@ class CoinScreen extends StatelessWidget {
                         onTap: () {
                           Navigator.pop(context);
                         },
-                        child: Image.asset(
-                          'assets/images/back.png',
-                          fit: BoxFit.cover,
+                        child: Container(
+                          padding: EdgeInsets.only(left: 10, right: 20),
+                          child: Image.asset(
+                            'assets/images/back.png',
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
-                      SizedBox(width: 20),
+
                       Image.asset(
-                        'assets/images/cryptocurrency_bitcoin_logo_small.png',
+                        coin.imagePath,
                         fit: BoxFit.cover,
+                        height: 26,
                       ),
-                      SizedBox(width: 20),
+                      SizedBox(width: 10),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
                           Text(
-                            'Bitcoin',
+                            coin.name,
                             style: GoogleFonts.manrope(
                               color: Color(0xFF212529),
-                              fontSize: 16,
+                              fontSize: 14,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          SizedBox(width: 4),
+                          SizedBox(width: 2),
                           Text(
-                            '(BTC)',
+                            "(${coin.symbol})",
                             style: GoogleFonts.manrope(
                               color: Color(0xFF6C757D),
-                              fontSize: 12,
+                              fontSize: 11,
                               fontWeight: FontWeight.w300,
                             ),
                           ),
@@ -285,7 +291,7 @@ class CoinScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Text(
-                    '₹98,509.75',
+                    coin.value,
                     style: GoogleFonts.manrope(
                       color: Color(0xFF212529),
                       fontSize: 14,
@@ -296,7 +302,7 @@ class CoinScreen extends StatelessWidget {
                   Text(
                     '+ 1700.254 (9.77%)',
                     style: GoogleFonts.manrope(
-                      color: Color(0xFF21BF73),
+                      color: coin.isUp ? Color(0xFF21BF73) : Color(0xFFD90429),
                       fontSize: 12,
                       fontWeight: FontWeight.w600,
                     ),
@@ -619,16 +625,13 @@ class CoinScreen extends StatelessWidget {
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Image.asset(
-                            'assets/images/cryptocurrency_bitcoin_logo.png',
-                            fit: BoxFit.cover,
-                          ),
+                          Image.asset(coin.imagePath, fit: BoxFit.cover),
                           SizedBox(width: 10),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Bitcoin',
+                                coin.name,
                                 style: GoogleFonts.manrope(
                                   color: Colors.black,
                                   fontSize: 13,
@@ -636,7 +639,7 @@ class CoinScreen extends StatelessWidget {
                                 ),
                               ),
                               Text(
-                                'BTC',
+                                coin.symbol,
                                 style: GoogleFonts.manrope(
                                   color: Color(0xFF6C757D),
                                   fontSize: 11,
@@ -655,7 +658,7 @@ class CoinScreen extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
                               Text(
-                                '₹00.00',
+                                coin.value,
                                 style: GoogleFonts.manrope(
                                   color: Colors.black,
                                   fontSize: 13,
@@ -663,7 +666,7 @@ class CoinScreen extends StatelessWidget {
                                 ),
                               ),
                               Text(
-                                '00.00%',
+                                coin.percent,
                                 style: GoogleFonts.manrope(
                                   color: Color(0xFF6C757D),
                                   fontSize: 11,
@@ -685,7 +688,9 @@ class CoinScreen extends StatelessWidget {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => HistoryScreen()),
+                    MaterialPageRoute(
+                      builder: (context) => HistoryScreen(coin: coin),
+                    ),
                   );
                 },
                 child: Container(
@@ -744,7 +749,7 @@ class CoinScreen extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => BuyScreen(),
+                              builder: (context) => BuyScreen(coin: coin),
                             ),
                           );
                         },
@@ -788,7 +793,7 @@ class CoinScreen extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => SellScreen(),
+                              builder: (context) => SellScreen(coin: coin),
                             ),
                           );
                         },

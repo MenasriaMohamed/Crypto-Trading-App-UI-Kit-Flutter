@@ -1,9 +1,11 @@
-import 'package:crypto_trading_app_ui_kit_flutter/screens/recieve_screen.dart';
+import 'package:crypto_trading_app_ui_kit_flutter/models/cryptocurrency.dart';
+import 'package:crypto_trading_app_ui_kit_flutter/screens/receive_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SellScreen extends StatelessWidget {
-  const SellScreen({super.key});
+  final Cryptocurrency coin;
+  const SellScreen({super.key, required this.coin});
 
   @override
   Widget build(BuildContext context) {
@@ -29,19 +31,21 @@ class SellScreen extends StatelessWidget {
                         onTap: () {
                           Navigator.pop(context);
                         },
-                        child: Image.asset(
-                          'assets/images/back.png',
-                          fit: BoxFit.cover,
+                        child: Container(
+                          padding: EdgeInsets.only(left: 10, right: 20),
+                          child: Image.asset(
+                            'assets/images/back.png',
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
 
-                      SizedBox(width: 20),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
                           Text(
-                            'Sell Bitcoin',
+                            'Sell ${coin.name}',
                             style: GoogleFonts.manrope(
                               color: Color(0xFF212529),
                               fontSize: 16,
@@ -50,7 +54,7 @@ class SellScreen extends StatelessWidget {
                           ),
                           SizedBox(width: 4),
                           Text(
-                            '(BTC)',
+                            '(${coin.symbol})',
                             style: GoogleFonts.manrope(
                               color: Color(0xFF6C757D),
                               fontSize: 12,
@@ -74,7 +78,7 @@ class SellScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Text(
-                            'BUY BTC',
+                            'BUY ${coin.symbol}',
                             style: GoogleFonts.manrope(
                               color: Color(0xFF21BF73),
                               fontSize: 11,
@@ -433,7 +437,9 @@ class SellScreen extends StatelessWidget {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => RecieveScreen()),
+                    MaterialPageRoute(
+                      builder: (context) => ReceiveScreen(coin: coin),
+                    ),
                   );
                 },
                 child: Container(

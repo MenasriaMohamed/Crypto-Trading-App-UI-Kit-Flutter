@@ -1,8 +1,10 @@
+import 'package:crypto_trading_app_ui_kit_flutter/models/cryptocurrency.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class RecieveScreen extends StatelessWidget {
-  const RecieveScreen({super.key});
+class ReceiveScreen extends StatelessWidget {
+  final Cryptocurrency coin;
+  const ReceiveScreen({super.key, required this.coin});
 
   @override
   Widget build(BuildContext context) {
@@ -33,15 +35,18 @@ class RecieveScreen extends StatelessWidget {
                               onTap: () {
                                 Navigator.pop(context);
                               },
-                              child: Image.asset(
-                                'assets/images/back.png',
-                                fit: BoxFit.cover,
+                              child: Container(
+                                padding: EdgeInsets.only(left: 10, right: 20),
+                                child: Image.asset(
+                                  'assets/images/back.png',
+                                  fit: BoxFit.cover,
+                                ),
                               ),
                             ),
 
                             SizedBox(width: 20),
                             Text(
-                              'Receive Bitcoin',
+                              'Receive ${coin.name}',
                               style: GoogleFonts.manrope(
                                 color: Color(0xFF212529),
                                 fontSize: 16,
@@ -78,10 +83,7 @@ class RecieveScreen extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            Image.asset(
-                              'assets/images/cryptocurrency_bitcoin_logo.png',
-                              fit: BoxFit.cover,
-                            ),
+                            Image.asset(coin.imagePath, fit: BoxFit.cover),
 
                             SizedBox(height: 30),
 
@@ -137,7 +139,7 @@ class RecieveScreen extends StatelessWidget {
                             SizedBox(height: 16),
 
                             Text(
-                              'Your Bitcoin Address',
+                              'Your ${coin.name} Address',
                               style: GoogleFonts.manrope(
                                 color: Colors.black,
                                 fontSize: 14,
@@ -187,6 +189,7 @@ class RecieveScreen extends StatelessWidget {
                     ),
                   ],
                 ),
+                SizedBox(height: 20),
                 GestureDetector(
                   onTap: () {},
                   child: Container(

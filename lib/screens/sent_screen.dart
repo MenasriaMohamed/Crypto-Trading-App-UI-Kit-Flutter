@@ -1,8 +1,10 @@
+import 'package:crypto_trading_app_ui_kit_flutter/models/cryptocurrency.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SentScreen extends StatelessWidget {
-  const SentScreen({super.key});
+  final Cryptocurrency coin;
+  const SentScreen({super.key, required this.coin});
 
   @override
   Widget build(BuildContext context) {
@@ -28,15 +30,18 @@ class SentScreen extends StatelessWidget {
                         onTap: () {
                           Navigator.pop(context);
                         },
-                        child: Image.asset(
-                          'assets/images/back.png',
-                          fit: BoxFit.cover,
+                        child: Container(
+                          padding: EdgeInsets.only(left: 10, right: 20),
+                          child: Image.asset(
+                            'assets/images/back.png',
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
 
                       SizedBox(width: 20),
                       Text(
-                        'Send Bitcoin',
+                        'Send ${coin.name}',
                         style: GoogleFonts.manrope(
                           color: Color(0xFF212529),
                           fontSize: 16,
@@ -76,16 +81,13 @@ class SentScreen extends StatelessWidget {
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Image.asset(
-                            'assets/images/cryptocurrency_bitcoin_logo.png',
-                            fit: BoxFit.cover,
-                          ),
+                          Image.asset(coin.imagePath, fit: BoxFit.cover),
                           SizedBox(width: 10),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Bitcoin',
+                                coin.name,
                                 style: GoogleFonts.manrope(
                                   color: Colors.black,
                                   fontSize: 13,
@@ -93,7 +95,7 @@ class SentScreen extends StatelessWidget {
                                 ),
                               ),
                               Text(
-                                'BTC',
+                                coin.symbol,
                                 style: GoogleFonts.manrope(
                                   color: Color(0xFF6C757D),
                                   fontSize: 11,
@@ -120,7 +122,7 @@ class SentScreen extends StatelessWidget {
                                 ),
                               ),
                               Text(
-                                '2.23464 BTC',
+                                '2.23464 ${coin.symbol}',
                                 style: GoogleFonts.manrope(
                                   color: Colors.black,
                                   fontSize: 13,

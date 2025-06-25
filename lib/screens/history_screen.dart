@@ -1,8 +1,10 @@
+import 'package:crypto_trading_app_ui_kit_flutter/models/cryptocurrency.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class HistoryScreen extends StatelessWidget {
-  const HistoryScreen({super.key});
+  final Cryptocurrency coin;
+  const HistoryScreen({super.key, required this.coin});
 
   @override
   Widget build(BuildContext context) {
@@ -28,9 +30,12 @@ class HistoryScreen extends StatelessWidget {
                         onTap: () {
                           Navigator.pop(context);
                         },
-                        child: Image.asset(
-                          'assets/images/back.png',
-                          fit: BoxFit.cover,
+                        child: Container(
+                          padding: EdgeInsets.only(left: 10, right: 20),
+                          child: Image.asset(
+                            'assets/images/back.png',
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
 
@@ -76,10 +81,7 @@ class HistoryScreen extends StatelessWidget {
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Image.asset(
-                            'assets/images/cryptocurrency_bitcoin_logo.png',
-                            fit: BoxFit.cover,
-                          ),
+                          Image.asset(coin.imagePath, fit: BoxFit.cover),
                           SizedBox(width: 10),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -88,7 +90,7 @@ class HistoryScreen extends StatelessWidget {
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
                                   Text(
-                                    'Bitcoin /',
+                                    "${coin.name} /",
                                     style: GoogleFonts.manrope(
                                       color: Colors.black,
                                       fontSize: 13,
@@ -97,7 +99,7 @@ class HistoryScreen extends StatelessWidget {
                                   ),
                                   SizedBox(width: 4),
                                   Text(
-                                    'BTC',
+                                    coin.symbol,
                                     style: GoogleFonts.manrope(
                                       color: Color(0xFF6C757D),
                                       fontSize: 8,
@@ -168,7 +170,6 @@ class HistoryScreen extends StatelessWidget {
               ),
 
               SizedBox(height: 10),
-
               Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
@@ -196,10 +197,7 @@ class HistoryScreen extends StatelessWidget {
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Image.asset(
-                            'assets/images/cryptocurrency_bitcoin_logo.png',
-                            fit: BoxFit.cover,
-                          ),
+                          Image.asset(coin.imagePath, fit: BoxFit.cover),
                           SizedBox(width: 10),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -208,7 +206,7 @@ class HistoryScreen extends StatelessWidget {
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
                                   Text(
-                                    'Bitcoin /',
+                                    "${coin.name} /",
                                     style: GoogleFonts.manrope(
                                       color: Colors.black,
                                       fontSize: 13,
@@ -217,7 +215,7 @@ class HistoryScreen extends StatelessWidget {
                                   ),
                                   SizedBox(width: 4),
                                   Text(
-                                    'BTC',
+                                    coin.symbol,
                                     style: GoogleFonts.manrope(
                                       color: Color(0xFF6C757D),
                                       fontSize: 8,
